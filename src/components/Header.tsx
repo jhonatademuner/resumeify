@@ -21,7 +21,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="flex items-center justify-center w-full h-20">
+    <header className="flex items-center justify-center w-full h-20 absolute">
       <div className="flex items-center justify-between h-full 2xl:w-[1536px] lg:w-[1024px] w-full">
         <a href="/">
           <div className="flex items-center w-48">

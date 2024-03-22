@@ -13,6 +13,9 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors: {
+        'text-accent': '#433BFF',
+      },
     },
     rotate: {
       '-180': '-180deg',
@@ -28,10 +31,10 @@ const config: Config = {
       '135': '135deg',
       '180': '180deg',
       '270': '270deg',
-     },
-     fontFamily: {
+    },
+    fontFamily: {
       sans: ['Roboto', 'sans-serif'],
-    }
+    },
   },
   plugins: [],
 };
