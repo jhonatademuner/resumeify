@@ -1,5 +1,8 @@
+import Image from "next/image";
+
+import HeroCardsImg from "@/assets/hero-cards.png";
+
 import Header from "@/components/Header";
-import HeroCards from "@/components/HeroCards";
 
 export default function Home() {
   return (
@@ -7,11 +10,13 @@ export default function Home() {
       <main className="flex min-h-screen flex-col items-center justify-between overflow-x-hidden relative">
 
         {/* Background Radial Gradient*/}
-        <div className="absolute -right-[15%] h-[90vh] top-[5vh] w-[128rem] bg-[#433BFF] rounded-[50%] rotate-0 blur-[300px] opacity-40 -z-10"></div>
+        <div className="absolute -right-[15%] h-[90%] top-[5vh] w-[128rem] bg-[#433BFF] rounded-[50%] rotate-0 blur-[300px] opacity-40 -z-10"></div>
         {/* Background Radial Gradient*/}
-        <div className="absolute top-20 right-[calc(15%+5rem)] h-[90vh] w-[36rem] bg-[#2F27CE] rounded-[50%] rotate-15 blur-[300px] opacity-30 -z-10"></div>
+        <div className="absolute top-20 right-[calc(15%+5rem)] h-[90%] w-[36rem] bg-[#2F27CE] rounded-[50%] rotate-15 blur-[300px] opacity-30 -z-10"></div>
 
         <Header />
+
+        {/* Hero Section */}
         <section className="flex justify-between items-center min-h-screen 2xl:w-[1536px] lg:w-[1024px]">
           <div className="flex flex-col gap-6">
             <div className="flex flex-col gap-2">
@@ -29,8 +34,7 @@ export default function Home() {
             </div>
             <button className=" py-2 px-4 bg-black rounded-xl text-white w-fit h-fit text-xl">Get Started</button>
           </div>
-          <HeroCards />
-          
+          <Image src={HeroCardsImg} alt="Hero Cards Image" className=" max-w-[48rem]"/>
         </section>
 
       </main>
