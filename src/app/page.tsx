@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import HeroCardsImg from "@/assets/hero-cards.png";
 import SampleFormImg from "@/assets/sample-form.png";
+import AiHelperImg from "@/assets/ai-helper.png";
 
 import Header from "@/components/Header";
 
@@ -92,6 +93,37 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Feature Section */}
+        <section className="flex justify-center items-center min-h-screen 2xl:w-[1536px] lg:w-[1024px] relative">
+          <div className="flex justify-between items-center gap-12">
+            <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-8">
+                <div className="flex relative justify-center items-end shrink-0 flex-nowrap">
+                  <div className="flex bg-text-accent opacity-20 h-1/5 w-[31.5rem] absolute top-7 left-0"></div>
+                  <h2 className=" text-5xl text-black font-bold z-10">
+                    Improve Your Resumes by Using<br/>
+                    a AI Helper
+                  </h2>
+                </div>
+                <p className="text-lg font-medium text-black leading-6">
+                Ditch the hassle of crafting introductions and tailoring skills lists! Our AI helper<br/>
+                takes care of that. Simply provide your skills and a job URL from LinkedIn, and<br/>
+                it will generate a custom resume for each application.
+                </p>
+              </div>
+              <button className=" py-2 px-4 bg-black rounded-xl text-white w-fit h-fit text-xl">
+                Customize your Resume
+              </button>
+            </div>
+            <Image
+              src={AiHelperImg}
+              alt="Ai Helper Image"
+              className=" max-w-[48rem]"
+            ></Image>
+          </div>
+        </section>
+
       </main>
     </>
   );
