@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +18,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <main className="flex min-h-screen flex-col items-center justify-between overflow-x-hidden relative">
+          {/* Background Radial Gradient*/}
+          <div className="absolute -right-[15%] h-[90%] top-[5vh] w-[128rem] bg-[#433BFF] rounded-[50%] rotate-0 blur-[300px] opacity-20 -z-10"></div>
+          {/* Background Radial Gradient*/}
+          <div className="absolute top-20 right-[calc(15%+5rem)] h-[90%] w-[36rem] bg-[#2F27CE] rounded-[50%] rotate-15 blur-[300px] opacity-10 -z-10"></div>
+          <Navbar />
+          <div className='flex flex-col items-center pt-20 min-h-screen'>
+            {children}
+          </div>
+          <Footer />
+        </main>
+      </body>
     </html>
   );
 }
