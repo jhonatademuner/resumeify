@@ -1,16 +1,10 @@
 "use client";
 
+import Language from "@/models/Language";
 import React, { useState } from "react";
 
-interface Language {
-  language: string;
-  level: string; // Beginner, Elementary, etc.
-}
-
 const LanguageInput = () => {
-  const [languages, setLanguages] = useState<Language[]>([
-    { language: "", level: "beginner" }, // Default language with beginner level
-  ]);
+  const [languages, setLanguages] = useState<Language[]>([new Language()]);
 
   const handleLanguageChange = (
     index: number,
@@ -18,7 +12,7 @@ const LanguageInput = () => {
   ) => {
     setLanguages((prevLanguages) => {
       const updatedLanguages = [...prevLanguages];
-      updatedLanguages[index].language = event.target.value;
+      updatedLanguages[index].name = event.target.value;
       return updatedLanguages;
     });
   };
@@ -33,9 +27,10 @@ const LanguageInput = () => {
 
   const addLanguage = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault(); // Prevent default form submission if needed
+
     setLanguages((prevLanguages) => [
       ...prevLanguages,
-      { language: "", level: "beginner" },
+      new Language()
     ]);
   };
 
@@ -49,20 +44,20 @@ const LanguageInput = () => {
   };
 
   return (
-    <div className="resume-languages">
+    <div className="resume-languages w-full">
       {languages.map((language, index) => (
-        <div key={index} className="language-section">
-          <div className="bg-yellow-500">
+        <div key={index} className="language-section w-full">
+          <div className=" w-full flex">
             <input
               type="text"
               placeholder="Language"
-              className="border-2 border-black rounded-lg p-2 m-2"
+              className="border-2 border-black rounded-lg p-2 w-full"
               name="language"
-              value={language.language}
+              value={language.name}
               onChange={(event) => handleLanguageChange(index, event)}
             />
             <select
-              className="border-2 border-black rounded-lg p-2 m-2"
+              className="border-2 border-black rounded-lg p-2 shrink-0"
               name={`level-${index}`}
               value={language.level}
               onChange={(event) => handleLevelChange(index, event)}
