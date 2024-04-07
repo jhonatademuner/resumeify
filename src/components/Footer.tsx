@@ -2,7 +2,7 @@ import Logo from "./Logo";
 
 export default function Footer(){
   return (
-    <footer className="w-full flex justify-center items-center bg-[#807DAB] opacity-80 py-16">
+    <footer className="w-full flex justify-center items-center bg-secondary opacity-80 py-16">
     <div className="flex flex-col justify-between items-center 2xl:w-[1536px] lg:w-[1024px] text-white gap-8 px-2">
       <div className="flex justify-between items-center w-full">
         <div className="flex flex-col justify-between items-start gap-8">
