@@ -63,7 +63,7 @@ const Home = () => {
           <div className="flex flex-col gap-6 shrink-0">
             <div className="flex flex-col gap-8">
               <div className="flex relative items-end shrink-0 flex-nowrap">
-                <div className="flex bg-[#D9D9D9] opacity-50 h-1/5 absolute bottom-0 2xl:w-[30rem] 2xl:right-16 xl:w-[22.5rem] xl:right-[4rem] sm:w-[19rem] sm:right-12"></div>
+                <div className="flex bg-form-fields opacity-50 h-1/5 absolute bottom-0 2xl:w-[30rem] 2xl:right-16 xl:w-[22.5rem] xl:right-[4rem] sm:w-[19rem] sm:right-12"></div>
                 <h2 className=" 2xl:text-5xl xl:text-4xl sm:text-3xl text-black font-bold z-10">
                   A Hassle-Free and User-Friendly
                   <br />
