@@ -14,7 +14,12 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        'text-accent': '#433BFF',
+        'primary': '#433BFF',
+        'secondary': '#807DAB',
+        'tertiary': '#2F27CE',
+        'pink-gradient': '#F943D1',
+        'form-text': '#373653',
+        'form-fields': '#D9D9D9'
       },
     },
     rotate: {
