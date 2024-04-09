@@ -44,20 +44,20 @@ const LanguageInput = () => {
   };
 
   return (
-    <div className="resume-languages w-full">
+    <div className="flex flex-col w-full gap-2">
       {languages.map((language, index) => (
-        <div key={index} className="language-section w-full">
-          <div className=" w-full flex">
+        <div key={index} className="flex flex-col gap-2 w-full">
+          <div className="flex w-full gap-2 flex-no-wrap items-center">
             <input
               type="text"
               placeholder="Language"
-              className="border-2 border-black rounded-lg p-2 w-full"
+              className="bg-form-fields bg-opacity-50 rounded-lg px-2 py-1 text-lg text-form-text placeholder-form-text placeholder-opacity-50 outline-none w-full"
               name="language"
               value={language.name}
               onChange={(event) => handleLanguageChange(index, event)}
             />
             <select
-              className="border-2 border-black rounded-lg p-2 shrink-0"
+              className="bg-form-fields bg-opacity-50 rounded-lg px-2 py-1 text-lg text-form-text placeholder-form-text placeholder-opacity-50 outline-none h-9 shrink-0"
               name={`level-${index}`}
               value={language.level}
               onChange={(event) => handleLevelChange(index, event)}
@@ -72,7 +72,7 @@ const LanguageInput = () => {
           </div>
           {index !== languages.length - 1 && ( // Only show remove button for non-last language
             <button
-              className="btn-remove"
+              className="bg-black text-white p-2 rounded-lg w-full"
               onClick={(e) => removeLanguage(e, index)}
             >
               Remove language
@@ -80,7 +80,7 @@ const LanguageInput = () => {
           )}
         </div>
       ))}
-      <button className="btn-add" onClick={addLanguage}>
+      <button className="bg-black text-white p-2 rounded-lg" onClick={addLanguage}>
         Add language
       </button>
     </div>

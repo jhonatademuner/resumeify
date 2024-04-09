@@ -37,10 +37,7 @@ const EducationInput = () => {
 
   const addEducation = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault(); // Prevent default form submission if needed
-    setEducations((prevEducations) => [
-      ...prevEducations,
-      new Education()
-    ]);
+    setEducations((prevEducations) => [...prevEducations, new Education()]);
   };
 
   const removeEducation = (
@@ -57,71 +54,60 @@ const EducationInput = () => {
   };
 
   return (
-    <div className="resume-educations w-full">
+    <div className="flex flex-col w-full gap-2">
       {educations.map((education, index) => (
-        <div key={index} className="education-section w-full">
-          <div className="w-full">
-            <div className="flex justify-between items-center">
-              <input
-                type="text"
-                placeholder="Degree"
-                className="border-2 border-black rounded-lg p-2 w-1/2"
-                name="degree"
-                value={education.degree}
-                onChange={(event) => handleInputChange(index, event)}
-              />
-              <input
-                type="text"
-                placeholder="School"
-                className="border-2 border-black rounded-lg p-2 w-1/2"
-                name="school"
-                value={education.institution}
-                onChange={(event) => handleInputChange(index, event)}
-              />
-            </div>
-            <div className="flex items-center">
-              <input
-                type="date"
-                placeholder="Start Date"
-                className="border-2 border-black rounded-lg p-2"
-                name="startDate"
-                value={education.startDate}
-                onChange={(event) => handleInputChange(index, event)}
-              />
-              {!education.isCurrentlyEnrolled && (
-                <input
-                  type="date"
-                  placeholder="End Date"
-                  className="border-2 border-black rounded-lg p-2 "
-                  name="endDate"
-                  value={education.endDate}
-                  onChange={(event) => handleInputChange(index, event)}
-                />
-              )}
-              <label htmlFor={`currentlyEnrolled-${index}`}>
-                <input
-                  type="checkbox"
-                  className="border-2 border-black rounded-lg p-2 "
-                  name="isCurrentlyEnrolled"
-                  checked={education.isCurrentlyEnrolled}
-                  onChange={(event) =>
-                    handleCurrentEnrollmentChange(index, event)
-                  }
-                />
-                Im currently enrolled
-              </label>
-            </div>
-            <textarea
-              placeholder="In the description you should put your relevant coursework and achievements."
-              className="border-2 border-black rounded-lg p-2 w-full h-24 "
-              name="description"
-              value={education.description}
+        <div key={index} className="flex flex-col gap-2 w-full">
+          <div className="flex w-full gap-2 flex-wrap items-center">
+            <input
+              type="text"
+              placeholder="Degree"
+              className="bg-form-fields bg-opacity-50 rounded-lg px-2 py-1 text-lg text-form-text placeholder-form-text placeholder-opacity-50 outline-none w-full lg:max-w-[calc(50%-0.25rem)]"
+              name="degree"
+              value={education.degree}
               onChange={(event) => handleInputChange(index, event)}
             />
+            <input
+              type="text"
+              placeholder="School"
+              className="bg-form-fields bg-opacity-50 rounded-lg px-2 py-1 text-lg text-form-text placeholder-form-text placeholder-opacity-50 outline-none w-full lg:max-w-[calc(50%-0.25rem)]"
+              name="school"
+              value={education.institution}
+              onChange={(event) => handleInputChange(index, event)}
+            />
+            <input
+              type="date"
+              placeholder="Start Date"
+              className="bg-form-fields bg-opacity-50 rounded-lg px-2 py-1 text-lg text-form-text placeholder-form-text placeholder-opacity-50 outline-none w-1/2 lg:max-w-[calc(25%-0.30rem)]"
+              name="startDate"
+              value={education.startDate}
+              onChange={(event) => handleInputChange(index, event)}
+            />
+            {!education.isCurrentlyEnrolled && (
+              <input
+                type="date"
+                placeholder="End Date"
+                className="bg-form-fields bg-opacity-50 rounded-lg px-2 py-1 text-lg text-form-text placeholder-form-text placeholder-opacity-50 outline-none w-1/2 lg:max-w-[calc(25%-0.30rem)] "
+                name="endDate"
+                value={education.endDate}
+                onChange={(event) => handleInputChange(index, event)}
+              />
+            )}
+            <label htmlFor={`currentlyEnrolled-${index}`}>
+              <input
+                type="checkbox"
+                className="border-2 border-black rounded-lg p-2 "
+                name="isCurrentlyEnrolled"
+                checked={education.isCurrentlyEnrolled}
+                onChange={(event) =>
+                  handleCurrentEnrollmentChange(index, event)
+                }
+              />
+              Im currently enrolled
+            </label>
           </div>
           {index !== educations.length - 1 && ( // Only show remove button for non-last education
             <button
-              className="btn-remove"
+              className="bg-black text-white p-2 rounded-lg w-full"
               onClick={(e) => removeEducation(e, index)}
             >
               Remove education
@@ -129,7 +115,10 @@ const EducationInput = () => {
           )}
         </div>
       ))}
-      <button className="btn-add" onClick={addEducation}>
+      <button
+        className="bg-black text-white p-2 rounded-lg"
+        onClick={addEducation}
+      >
         Add education
       </button>
     </div>
