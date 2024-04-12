@@ -47,6 +47,6 @@ For questions or inquiries, please contact Jhonata Demuner at [jhonata.demuner@g
 - Tailwind
 - Python
 
-### Author
+### Developer
 
 - [@Jhonata Polito Demuner](https://github.com/jhonatademuner)
